@@ -1,0 +1,10 @@
+const publiserModel=require("../models/publisherModel.js")
+
+
+const createPubliser= async function (req, res) {
+    let publiser = req.body
+    let publiserCreated = await publiserModel.create(publiser)
+    res.send({data: publiserCreated})
+}
+
+module.exports.createPubliser= createPubliser
